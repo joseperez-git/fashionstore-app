@@ -1,63 +1,69 @@
-<div class="row justify-content-center">
+<div class="login-container d-flex justify-content-center align-items-center">
 
-  <div class="col-md-4">
+  <div class="card login-card shadow-lg p-4">
 
-    <div class="card shadow">
+    <div class="text-center mb-4">
 
-      <div class="card-body">
+      <h2 class="fw-bold">Fashion Store</h2>
 
-        <h3 class="text-center mb-4">
-          Iniciar Sesión
-        </h3>
+      <p class="text-muted">
+        Inicia sesión para continuar
+      </p>
 
-        <form>
+    </div>
 
-          <div class="mb-3">
+    <form (ngSubmit)="iniciarSesion()">
 
-            <label class="form-label">
-              Correo
-            </label>
+      <div class="mb-3">
 
-            <input
-              type="email"
-              class="form-control"
-              [(ngModel)]="correo"
-              name="correo"
-            >
+        <label class="form-label">Correo</label>
 
-          </div>
-
-          <div class="mb-3">
-
-            <label class="form-label">
-              Contraseña
-            </label>
-
-            <input
-              type="password"
-              class="form-control"
-              [(ngModel)]="password"
-              name="password"
-            >
-
-          </div>
-
-          <button
-            type="button"
-            class="btn btn-dark w-100"
-            (click)="iniciarSesion()"
-          >
-            Ingresar
-          </button>
-
-        </form>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="correo"
+          name="correo"
+          placeholder="admin@gmail.com"
+          required
+        >
 
       </div>
 
-    </div>
+      <div class="mb-3">
+
+        <label class="form-label">Contraseña</label>
+
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="******"
+          required
+        >
+
+      </div>
+
+      <button
+        class="btn btn-dark w-100"
+        type="submit"
+      >
+        Iniciar sesión
+      </button>
+
+      <div *ngIf="error" class="alert alert-danger mt-3">
+        {{ error }}
+      </div>
+
+    </form>
+
+    <p class="text-center mt-3 text-muted small">
+      Demo: admin@gmail.com / 123456
+    </p>
 
   </div>
 
 </div>
+
 
 
