@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
     const data = localStorage.getItem('usuario');
 
     if (!data) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     } else {
       this.usuario = JSON.parse(data);
     }
@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
     localStorage.removeItem('usuario');
 
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }
 

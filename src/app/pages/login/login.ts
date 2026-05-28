@@ -16,12 +16,16 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   iniciarSesion() {
+    if(
+      this.correo.trim() === '' || this.password.trim() === ''
+    ){
+      alert('Complete todos los campos');
+      return;
+    }
 
     if (
-      this.correo === 'admin@gmail.com' &&
-      this.password === '123456'
+      this.correo === 'admin@gmail.com' && this.password === '123456'
     ) {
-
       localStorage.setItem(
         'usuario',
         JSON.stringify({
