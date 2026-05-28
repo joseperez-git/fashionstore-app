@@ -1,30 +1,192 @@
-<div class="card shadow">
+<div class="container py-5">
 
-  <div class="card-body">
+  <div class="row justify-content-center">
 
-    <h2>
-      Dashboard
-    </h2>
+    <div class="col-lg-10">
 
-    <hr>
+      <div class="card shadow-lg border-0">
 
-    <p>
-      Bienvenido:
-      <strong>
-        {{ usuario?.correo }}
-      </strong>
-    </p>
+        <div class="card-body p-5">
 
-    <button
-      class="btn btn-danger"
-      (click)="cerrarSesion()"
-    >
-      Cerrar sesión
-    </button>
+          <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+
+              <h2 class="fw-bold">
+                Bienvenido
+              </h2>
+
+              <p class="text-muted mb-0">
+                Panel administrativo Fashion Store
+              </p>
+
+            </div>
+
+            <button
+              class="btn btn-dark"
+              (click)="cerrarSesion()"
+            >
+              Cerrar sesión
+            </button>
+
+          </div>
+
+          <hr>
+
+          <div class="row mt-4">
+
+            <div class="col-md-6 mb-4">
+
+              <div class="card dashboard-card h-100">
+
+                <div class="card-body">
+
+                  <h5 class="fw-bold mb-3">
+                    Información del usuario
+                  </h5>
+
+                  <p>
+                    <strong>Correo:</strong>
+                    {{ usuario.correo }}
+                  </p>
+
+                  <p>
+                    <strong>Rol:</strong>
+                    Administrador
+                  </p>
+
+                  <p>
+                    <strong>Estado:</strong>
+
+                    <span class="badge bg-success">
+                      Activo
+                    </span>
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-6 mb-4">
+
+              <div class="card dashboard-card h-100">
+
+                <div class="card-body">
+
+                  <h5 class="fw-bold mb-3">
+                    Estadísticas
+                  </h5>
+
+                  <div class="row text-center">
+
+                    <div class="col-6 mb-3">
+
+                      <h2 class="fw-bold text-primary">
+                        10
+                      </h2>
+
+                      <p class="text-muted">
+                        Productos
+                      </p>
+
+                    </div>
+
+                    <div class="col-6 mb-3">
+
+                      <h2 class="fw-bold text-success">
+                        2
+                      </h2>
+
+                      <p class="text-muted">
+                        Categorías
+                      </p>
+
+                    </div>
+
+                    <div class="col-6">
+
+                      <h2 class="fw-bold text-danger">
+                        4
+                      </h2>
+
+                      <p class="text-muted">
+                        Ofertas
+                      </p>
+
+                    </div>
+
+                    <div class="col-6">
+
+                      <h2 class="fw-bold text-warning">
+                        15
+                      </h2>
+
+                      <p class="text-muted">
+                        Ventas
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="card dashboard-card">
+
+            <div class="card-body">
+
+              <h5 class="fw-bold mb-3">
+                Accesos rápidos
+              </h5>
+
+              <div class="d-flex flex-wrap gap-3">
+
+                <a routerLink="/productos">
+                  <button class="btn btn-outline-dark">
+                    Productos
+                  </button>
+                </a>
+                
+                <a routerLink="/ofertas">
+                  <button class="btn btn-outline-dark">
+                    Ofertas
+                  </button>
+                </a>
+                
+                <a routerLink="/tienda">
+                  <button class="btn btn-outline-dark">
+                    Tienda
+                  </button>
+                </a>
+                
+                <a routerLink="/contacto">
+                  <button class="btn btn-outline-dark">
+                    Contacto
+                  </button>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
 </div>
-
 
 

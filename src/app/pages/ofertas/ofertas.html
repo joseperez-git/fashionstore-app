@@ -1,8 +1,85 @@
-<p>ofertas works!</p>
-<h1>Ofertas</h1>
-<ul>
-  <li *ngFor="let oferta of ofertas">
-    {{ oferta.name }} - {{ oferta.price | currency }}
-  </li>
-</ul>
+<div class="container py-5">
+
+  <div class="ofertas-banner mb-5">
+
+    <h1 class="fw-bold">
+      Ofertas Especiales
+    </h1>
+
+    <p>
+      Descubre descuentos exclusivos
+      en nuestros mejores productos.
+    </p>
+
+  </div>
+
+  <div class="row">
+
+    <div
+      class="col-md-6 col-lg-4 mb-4"
+      *ngFor="let producto of productosOferta"
+    >
+
+      <div class="card oferta-card h-100 border-0">
+
+        <div class="badge-descuento">
+
+          -{{ producto.descuento }}%
+
+        </div>
+
+        <img
+          [src]="producto.imagen"
+          class="card-img-top imagen-oferta"
+        >
+
+        <div class="card-body">
+
+          <p class="categoria">
+            {{ producto.categoria }}
+          </p>
+
+          <h5 class="fw-bold">
+            {{ producto.nombre }}
+          </h5>
+
+          <div class="precios">
+
+            <span class="precio-anterior">
+
+              {{ producto.precio | currency:'PEN' }}
+
+            </span>
+
+            <span class="precio-oferta">
+
+              {{
+                calcularDescuento(
+                  producto.precio,
+                  producto.descuento
+                )
+                | currency:'PEN'
+              }}
+
+            </span>
+
+          </div>
+
+          <button class="btn btn-dark w-100 mt-3">
+
+            Comprar ahora
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 

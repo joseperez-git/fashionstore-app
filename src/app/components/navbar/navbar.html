@@ -1,8 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+
   <div class="container">
-    
-    <a class="navbar-brand" routerLink="/">
-      Mi Fashion Store
+
+    <a
+      class="navbar-brand logo"
+      (click)="irInicio()"
+    >
+      Fashion Store
     </a>
 
     <button
@@ -14,57 +18,84 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="menu">
+    <div
+      class="collapse navbar-collapse"
+      id="menu"
+    >
 
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav mx-auto">
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/">
-            Home
+          <a
+            class="nav-link"
+            routerLink="/"
+          >
+            Inicio
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/productos">
+          <a
+            class="nav-link"
+            routerLink="/productos"
+          >
             Productos
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/ofertas">
+          <a
+            class="nav-link"
+            routerLink="/ofertas"
+          >
             Ofertas
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tienda">
+          <a
+            class="nav-link"
+            routerLink="/tienda"
+          >
             Tienda
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contacto">
+          <a
+            class="nav-link"
+            routerLink="/contacto"
+          >
             Contacto
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/micuenta">
-            Mi Cuenta
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">
-            Login
           </a>
         </li>
 
       </ul>
 
+      <div class="d-flex gap-2">
+
+        <a
+          *ngIf="!estaLogueado()"
+          routerLink="/login"
+          class="btn btn-outline-light"
+        >
+          Iniciar sesión
+        </a>
+
+        <a
+          *ngIf="estaLogueado()"
+          routerLink="/micuenta"
+          class="btn btn-light"
+        >
+          Mi Cuenta
+        </a>
+
+      </div>
+
     </div>
 
   </div>
+
 </nav>
 
 
