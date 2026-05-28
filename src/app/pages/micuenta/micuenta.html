@@ -1,1 +1,61 @@
-<p>micuenta works!</p>
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4">
+    Mi Cuenta
+  </h2>
+
+  <!-- Usuario autenticado -->
+  <div *ngIf="usuario" class="card shadow p-4">
+
+    <h4 class="mb-3">
+      Bienvenido {{ usuario.nombre }}
+    </h4>
+
+    <p>
+      <strong>Correo:</strong>
+      {{ usuario.correo }}
+    </p>
+
+    <p>
+        <strong>Fecha y hora de ingreso:</strong>
+        {{ usuario.fecha | date:'EEEE, d MMMM y - HH:mm a' }}
+    </p>
+
+    <p>
+      <strong>Estado:</strong>
+
+      <span class="badge bg-success">
+        Activo
+      </span>
+    </p>
+
+    <button
+      class="btn btn-danger mt-3"
+      (click)="cerrarSesion()">
+
+      Cerrar Sesión
+
+    </button>
+
+  </div>
+
+  <!-- Usuario no autenticado -->
+  <div *ngIf="!usuario" class="alert alert-warning text-center">
+
+    <h4>No has iniciado sesión</h4>
+
+    <p>
+      Debes iniciar sesión para acceder a tu cuenta.
+    </p>
+
+    <a
+      routerLink="/login"
+      class="btn btn-primary">
+
+      Iniciar Sesión
+
+    </a>
+
+  </div>
+
+</div>
