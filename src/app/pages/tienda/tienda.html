@@ -1,1 +1,155 @@
-<p>tienda works!</p>
+<div class="container mt-5">
+
+  <h1 class="text-center mb-4">
+    Nuestra Tienda
+  </h1>
+
+  <p class="text-center">
+    Hora actual: {{ horaActual }}
+  </p>
+
+  <div class="text-center mb-4">
+
+    <span
+        class="badge fs-6 px-4 py-3 rounded-pill"
+        [ngClass]="{
+        'bg-success': abierto,
+        'bg-danger': !abierto
+        }">
+
+        {{ abierto ? 'Tienda Abierta' : ' Tienda Cerrada' }}
+
+    </span>
+
+ </div>
+
+  <p
+    class="text-center mb-5"
+    [ngStyle]="{
+      'font-size': '20px',
+      'font-weight': 'bold'
+    }">
+
+    Envíos gratis por compras mayores a S/150
+
+  </p>
+
+  <div class="row">
+
+    <div class="col-md-6 mb-4">
+
+      <div class="card shadow h-100">
+
+        <div class="card-body">
+
+          <h3>Sobre Nosotros</h3>
+
+          <p>
+            Fashion Store es una tienda especializada en ropa urbana y moderna.
+            Ofrecemos productos de calidad para hombres y mujeres con las últimas tendencias.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6 mb-4">
+
+      <div class="card shadow h-100">
+
+        <div class="card-body">
+
+          <h3>Horarios de Atención</h3>
+
+          <ul>
+
+          <li><p>Lunes - Viernes: 9:00 AM - 8:00 PM</p></li>
+          <li><p>Sábados: 10:00 AM - 6:00 PM</p></li>
+          <li><p>Domingos: Cerrado</p></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6 mb-4">
+
+      <div class="card shadow h-100">
+
+        <div class="card-body">
+
+          <h3>Métodos de Pago</h3>
+
+          <ul>
+
+            <li>Visa</li>
+            <li>Mastercard</li>
+            <li>Yape</li>
+            <li>Plin</li>
+            <li>Transferencia Bancaria</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-6 mb-4">
+
+      <div class="card shadow h-100">
+
+        <div class="card-body">
+
+          <h3>Beneficios</h3>
+
+          <ul>
+
+            <li>Envíos a todo el Perú</li>
+            <li>Garantía de calidad</li>
+            <li>Cambios y devoluciones</li>
+            <li>Atención personalizada</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card shadow mt-4">
+
+    <div class="card-body text-center">
+
+      <h3>Información de Contacto</h3>
+
+      <p>Lambayeque, Perú</p>
+
+      <p>+51 999 999 999</p>
+
+      <p>fashionstore@gmail.com</p>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="abierto" class="alert alert-success mt-4">
+
+    Estamos atendiendo pedidos en este momento.
+
+  </div>
+
+</div>
