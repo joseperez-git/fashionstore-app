@@ -1,1 +1,8 @@
 <p>ofertas works!</p>
+<h1>Ofertas</h1>
+<ul>
+  <li *ngFor="let oferta of ofertas">
+    {{ oferta.name }} - {{ oferta.price | currency }}
+  </li>
+</ul>
+
