@@ -19,6 +19,11 @@ export class ContactoComponent {
 
   enviarFormulario(form: any) {
 
+    if (!this.nombre || !this.correo || !this.mensaje) {
+      alert('Por favor, complete todos los campos obligatorios');
+      return;
+    }
+
     this.enviado = true;
 
     console.log({
