@@ -1,0 +1,22 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Laptop Gamer",
+      "imagen": "https://picsum.photos/300/200?1",
+      "categoria": "Tecnología",
+      "precio": 4500,
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "nombre": "Mouse RGB",
+      "imagen": "https://picsum.photos/300/200?2",
+      "categoria": "Accesorios",
+      "precio": 150,
+      "stock": 20
+    }
+  ]
+}
+
+

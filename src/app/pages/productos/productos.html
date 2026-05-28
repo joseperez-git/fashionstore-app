@@ -1,0 +1,53 @@
+<h2 class="mb-4">
+  Productos
+</h2>
+
+<div class="row">
+
+  <div
+    class="col-md-4 mb-4"
+    *ngFor="let producto of productos"
+  >
+
+    <div class="card h-100 shadow">
+
+      <img
+        [src]="producto.imagen"
+        class="card-img-top"
+      >
+
+      <div class="card-body">
+
+        <h5>
+          {{ producto.nombre }}
+        </h5>
+
+        <p>
+          {{ producto.categoria }}
+        </p>
+
+        <p>
+          Precio:
+          {{ producto.precio | currency:'PEN' }}
+        </p>
+
+        <p
+          [ngClass]="{
+            'text-success': producto.stock > 0,
+            'text-danger': producto.stock == 0
+          }"
+        >
+          Stock:
+          {{ producto.stock }}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+

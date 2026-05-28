@@ -1,0 +1,30 @@
+<div class="card shadow">
+
+  <div class="card-body">
+
+    <h2>
+      Dashboard
+    </h2>
+
+    <hr>
+
+    <p>
+      Bienvenido:
+      <strong>
+        {{ usuario?.correo }}
+      </strong>
+    </p>
+
+    <button
+      class="btn btn-danger"
+      (click)="cerrarSesion()"
+    >
+      Cerrar sesión
+    </button>
+
+  </div>
+
+</div>
+
+
+
