@@ -29,7 +29,9 @@ export class LoginComponent {
       localStorage.setItem(
         'usuario',
         JSON.stringify({
-          correo: this.correo
+          nombre: 'Administrador',
+          correo: this.correo,
+          fecha: new Date()
         })
       );
 
@@ -39,6 +41,7 @@ export class LoginComponent {
       alert('Credenciales incorrectas');
     }
   }
+
 }
 
 

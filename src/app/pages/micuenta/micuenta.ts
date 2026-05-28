@@ -1,9 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-micuenta',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, DatePipe, RouterLink],
   templateUrl: './micuenta.html',
-  styleUrl: './micuenta.css',
+  styleUrl: './micuenta.css'
 })
-export class Micuenta {}
+export class MicuentaComponent implements OnInit {
+
+  usuario: any = null;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+
+    const datos = localStorage.getItem('usuario');
+
+    if (datos) {
+      this.usuario = JSON.parse(datos);
+    }
+
+  }
+
+  cerrarSesion(): void {
+
+    localStorage.removeItem('usuario');
+
+    this.router.navigate(['/login']);
+
+  }
+
+}
