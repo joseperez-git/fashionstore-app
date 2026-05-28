@@ -1,0 +1,89 @@
+.ofertas-banner{
+  background:
+    linear-gradient(
+      135deg,
+      #111,
+      #2c2c2c
+    );
+
+  color: white;
+
+  padding: 60px 40px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.ofertas-banner h1{
+  font-size: 48px;
+}
+
+.oferta-card{
+  border-radius: 20px;
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.08);
+
+  position: relative;
+}
+
+.oferta-card:hover{
+  transform: translateY(-8px);
+}
+
+.badge-descuento{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  background: crimson;
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  z-index: 10;
+}
+
+.imagen-oferta{
+  height: 280px;
+  object-fit: contain;
+
+  padding: 20px;
+
+  background: #f8f9fa;
+}
+
+.categoria{
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.precios{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.precio-anterior{
+  text-decoration: line-through;
+  color: #999;
+}
+
+.precio-oferta{
+  font-size: 24px;
+  font-weight: bold;
+  color: crimson;
+}
+
+
+

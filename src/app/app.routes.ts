@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { Home } from './pages/home/home';
 import { ProductosComponent } from './pages/productos/productos';
-import { Ofertas } from './pages/ofertas/ofertas';
+import { OfertasComponent } from './pages/ofertas/ofertas';
 import { Tienda } from './pages/tienda/tienda';
 import { ContactoComponent } from './pages/contacto/contacto';
 import { MicuentaComponent } from './pages/micuenta/micuenta';
@@ -13,7 +13,7 @@ import { Notfound } from './pages/notfound/notfound';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'productos', component: ProductosComponent },
-  { path: 'ofertas', component: Ofertas },
+  { path: 'ofertas', component: OfertasComponent },
   { path: 'tienda', component: Tienda },
   { path: 'contacto', component: ContactoComponent },
   { path: 'micuenta', component: MicuentaComponent },
