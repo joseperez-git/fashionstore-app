@@ -4,7 +4,7 @@ import { Home } from './pages/home/home';
 import { ProductosComponent } from './pages/productos/productos';
 import { Ofertas } from './pages/ofertas/ofertas';
 import { Tienda } from './pages/tienda/tienda';
-import { Contacto } from './pages/contacto/contacto';
+import { ContactoComponent } from './pages/contacto/contacto';
 import { MicuentaComponent } from './pages/micuenta/micuenta';
 import { LoginComponent } from './pages/login/login';
 import { DashboardComponent } from './pages/dashboard/dashboard';
@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'ofertas', component: Ofertas },
   { path: 'tienda', component: Tienda },
-  { path: 'contacto', component: Contacto },
+  { path: 'contacto', component: ContactoComponent },
   { path: 'micuenta', component: MicuentaComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
