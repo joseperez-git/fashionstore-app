@@ -17,16 +17,7 @@ export class ContactoComponent {
 
   enviado: boolean = false;
 
-  enviarFormulario() {
-
-    if (
-      this.nombre.trim() === '' ||
-      this.correo.trim() === '' ||
-      this.mensaje.trim() === ''
-    ) {
-      alert('Complete todos los campos');
-      return;
-    }
+  enviarFormulario(form: any) {
 
     this.enviado = true;
 
@@ -36,5 +27,11 @@ export class ContactoComponent {
       mensaje: this.mensaje
     });
 
+    form.reset();
+
+    this.nombre = '';
+    this.correo = '';
+    this.mensaje = '';
   }
+
 }
