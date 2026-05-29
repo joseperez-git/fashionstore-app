@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,10 +17,10 @@ export class ContactoComponent {
 
   enviado: boolean = false;
 
-  enviarFormulario(form: any) {
+  enviarFormulario(form: NgForm) {
 
-    if (!this.nombre || !this.correo || !this.mensaje) {
-      alert('Por favor, complete todos los campos obligatorios');
+    if (form.invalid) {
+      form.control.markAllAsTouched();
       return;
     }
 
@@ -32,11 +32,8 @@ export class ContactoComponent {
       mensaje: this.mensaje
     });
 
-    form.reset();
+    form.resetForm();
 
-    this.nombre = '';
-    this.correo = '';
-    this.mensaje = '';
   }
 
 }

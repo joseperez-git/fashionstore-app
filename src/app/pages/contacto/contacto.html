@@ -2,6 +2,7 @@
 
   <div class="text-center mb-4">
     <h2 class="fw-bold">Contáctanos</h2>
+
     <p class="text-muted">
       Estamos aquí para ayudarte. Envíanos tu mensaje.
     </p>
@@ -17,6 +18,7 @@
 
           <form #form="ngForm" (ngSubmit)="enviarFormulario(form)">
 
+
             <div class="mb-3">
 
               <label class="form-label fw-semibold">
@@ -31,11 +33,25 @@
                 name="nombre"
                 required
                 minlength="3"
-                pattern="^[a-zA-ZÀ-ÿ\\s]+$"
+                pattern="^[a-zA-ZÀ-ÿ\s]+$"
                 #nombreRef="ngModel">
 
-              <div *ngIf="nombreRef.invalid && nombreRef.touched" class="text-danger mt-1">
-                Nombre inválido
+              <div
+                *ngIf="nombreRef.invalid && nombreRef.touched"
+                class="text-danger mt-1">
+
+                <small *ngIf="nombreRef.errors?.['required']">
+                  El nombre es obligatorio
+                </small>
+
+                <small *ngIf="nombreRef.errors?.['minlength']">
+                  Mínimo 3 caracteres
+                </small>
+
+                <small *ngIf="nombreRef.errors?.['pattern']">
+                  Solo se permiten letras
+                </small>
+
               </div>
 
             </div>
@@ -56,8 +72,18 @@
                 email
                 #correoRef="ngModel">
 
-              <div *ngIf="correoRef.invalid && correoRef.touched" class="text-danger mt-1">
-                Correo inválido
+              <div
+                *ngIf="correoRef.invalid && correoRef.touched"
+                class="text-danger mt-1">
+
+                <small *ngIf="correoRef.errors?.['required']">
+                  El correo es obligatorio
+                </small>
+
+                <small *ngIf="correoRef.errors?.['email']">
+                  Correo inválido
+                </small>
+
               </div>
 
             </div>
@@ -79,8 +105,18 @@
                 #mensajeRef="ngModel">
               </textarea>
 
-              <div *ngIf="mensajeRef.invalid && mensajeRef.touched" class="text-danger mt-1">
-                Mensaje inválido
+              <div
+                *ngIf="mensajeRef.invalid && mensajeRef.touched"
+                class="text-danger mt-1">
+
+                <small *ngIf="mensajeRef.errors?.['required']">
+                  El mensaje es obligatorio
+                </small>
+
+                <small *ngIf="mensajeRef.errors?.['minlength']">
+                  Mínimo 10 caracteres
+                </small>
+
               </div>
 
             </div>
@@ -89,7 +125,9 @@
 
               <button
                 type="submit"
-                class="btn btn-dark btn-lg rounded-3 shadow-sm">
+                class="btn btn-dark btn-lg rounded-3 shadow-sm"
+                [disabled]="form.invalid">
+
                 Enviar Mensaje
 
               </button>
@@ -98,21 +136,15 @@
 
           </form>
 
-          <div class="text-center mt-3 text-success fw-semibold">
+          <div
+            *ngIf="enviado"
+            class="alert alert-success text-center mt-3 shadow-sm rounded-3">
 
-            Gracias {{ nombre }}
+            ¡Mensaje enviado correctamente!
 
           </div>
 
         </div>
-
-      </div>
-
-      <div
-        *ngIf="enviado"
-        class="alert alert-success text-center mt-3 shadow-sm rounded-3">
-
-        ¡Mensaje enviado correctamente!
 
       </div>
 
