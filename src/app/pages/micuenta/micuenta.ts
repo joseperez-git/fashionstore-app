@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-micuenta',
   standalone: true,
-  imports: [CommonModule, DatePipe, RouterLink],
+  imports: [CommonModule, DatePipe],
   templateUrl: './micuenta.html',
   styleUrl: './micuenta.css'
 })
@@ -22,14 +22,6 @@ export class MicuentaComponent implements OnInit {
     if (datos) {
       this.usuario = JSON.parse(datos);
     }
-
-  }
-
-  cerrarSesion(): void {
-
-    localStorage.removeItem('usuario');
-
-    this.router.navigate(['/login']);
 
   }
 

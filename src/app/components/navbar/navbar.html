@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+<nav class="navbar navbar-expand-lg custom-navbar">
 
   <div class="container">
 
     <a
       class="navbar-brand logo"
-      (click)="irInicio()"
+      routerLink="/"
     >
       Fashion Store
     </a>
@@ -26,77 +26,67 @@
       <ul class="navbar-nav mx-auto">
 
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/"
-          >
+          <a class="nav-link" routerLink="/">
             Inicio
           </a>
         </li>
 
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/productos"
-          >
+          <a class="nav-link" routerLink="/productos">
             Productos
           </a>
         </li>
 
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/ofertas"
-          >
+          <a class="nav-link" routerLink="/ofertas">
             Ofertas
           </a>
         </li>
 
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/tienda"
-          >
+          <a class="nav-link" routerLink="/tienda">
             Tienda
           </a>
         </li>
 
         <li class="nav-item">
+          <a class="nav-link" routerLink="/contacto">
+            Contacto
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/micuenta">
+            Mi Cuenta
+          </a>
+        </li>
+
+        <li
+          class="nav-item"
+          *ngIf="usuarioLogueado"
+        >
           <a
             class="nav-link"
-            routerLink="/contacto"
+            routerLink="/dashboard"
           >
-            Contacto
+            Dashboard
           </a>
         </li>
 
       </ul>
 
-      <div class="d-flex gap-2">
-
-        <a
-          *ngIf="!estaLogueado()"
-          routerLink="/login"
-          class="btn btn-outline-light"
-        >
-          Iniciar sesión
-        </a>
-
-        <a
-          *ngIf="estaLogueado()"
-          routerLink="/micuenta"
-          class="btn btn-light"
-        >
-          Mi Cuenta
-        </a>
-
-      </div>
+      <a
+        *ngIf="!usuarioLogueado"
+        routerLink="/login"
+        class="btn btn-outline-light"
+      >
+        Iniciar sesión
+      </a>
 
     </div>
 
   </div>
 
 </nav>
-
 
 

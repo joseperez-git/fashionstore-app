@@ -1,42 +1,23 @@
-import { Component } from '@angular/core';
-
-import {
-  Router,
-  RouterLink
-} from '@angular/router';
-
+import { Component, DoCheck } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [
-    RouterLink,
-    CommonModule
-  ],
+  imports: [RouterLink, CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class NavbarComponent {
+export class NavbarComponent implements DoCheck {
 
-  constructor(
-    private router: Router
-  ) {}
+  usuarioLogueado = false;
 
-  estaLogueado(): boolean {
+  ngDoCheck(): void {
 
-    return !!localStorage.getItem('usuario');
-  }
+    const usuario =
+      localStorage.getItem('usuario');
 
-  irInicio(){
-
-    if(this.estaLogueado()){
-
-      this.router.navigate(['/dashboard']);
-
-    }else{
-
-      this.router.navigate(['/login']);
-    }
+    this.usuarioLogueado = !!usuario;
   }
 }
 
