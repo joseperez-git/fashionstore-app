@@ -17,9 +17,7 @@ export class ProductosComponent implements OnInit {
 
   categoriaSeleccionada: string = 'Todos';
 
-  constructor(
-    private productosService: ProductosService
-  ) {}
+  constructor(private productosService: ProductosService) {}
 
   ngOnInit(): void {
     this.listarProductos();

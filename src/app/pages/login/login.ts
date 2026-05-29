@@ -30,6 +30,8 @@ export class LoginComponent {
       this.password === '123456'
     ) {
 
+      this.error = '';
+
       localStorage.setItem(
         'usuario',
         JSON.stringify({
