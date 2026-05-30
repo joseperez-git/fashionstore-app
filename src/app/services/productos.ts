@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ProductosService {
 
-  private apiUrl = 'http://localhost:3000/productos';
+  //private apiUrl = 'http://localhost:3000/productos';
+  private apiUrl = 'https://6a1a262a489e4715751abf81.mockapi.io/api/productos';
 
   constructor(private http: HttpClient) {}
 
