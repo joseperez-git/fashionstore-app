@@ -95,17 +95,17 @@
 
 .hombre-card{
   background-image:
-    url('/assets/img/hombre-banner.jpg');
+    url('assets/img/hombre-banner.jpg');
 }
 
 .mujer-card{
   background-image:
-    url('/assets/img/mujer-banner.jpg');
+    url('assets/img/mujer-banner.jpg');
 }
 
 .oferta-card{
   background-image:
-    url('/assets/img/ofertas-banner.jpg');
+    url('assets/img/ofertas-banner.jpg');
 }
 
 .promo-section{
