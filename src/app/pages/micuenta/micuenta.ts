@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
@@ -12,8 +11,6 @@ import { CommonModule, DatePipe } from '@angular/common';
 export class MicuentaComponent implements OnInit {
 
   usuario: any = null;
-
-  constructor(private router: Router) {}
 
   ngOnInit(): void {
 
